@@ -28,7 +28,7 @@ class CarouselOptions {
   ///Defaults to true, i.e. infinite loop.
   final bool enableInfiniteScroll;
 
-  ///Determines if carousel should loop to the closest occurrence of requested page.
+  ///Determines if carousel should loop to the closest occurence of requested page.
   ///
   ///Defaults to true.
   final bool animateToClosest;
@@ -72,8 +72,7 @@ class CarouselOptions {
   final Axis scrollDirection;
 
   /// Called whenever the page in the center of the viewport changes.
-  final void Function(int index, CarouselPageChangedReason reason)?
-      onPageChanged;
+  final Function(int index, CarouselPageChangedReason reason)? onPageChanged;
 
   /// Called whenever the carousel is scrolled
   final ValueChanged<double?>? onScrolled;
@@ -112,8 +111,8 @@ class CarouselOptions {
   /// in the last item.
   final bool pauseAutoPlayInFiniteScroll;
 
-  /// Pass a `PageStorageKey` if you want to keep the PageView position when it was recreated.
-  final PageStorageKey<dynamic>? pageViewKey;
+  /// Pass a `PageStoragekey` if you want to keep the pageview's position when it was recreated.
+  final PageStorageKey? pageViewKey;
 
   /// Use [enlargeStrategy] to determine which method to enlarge the center page.
   final CenterPageEnlargeStrategy enlargeStrategy;
@@ -165,33 +164,32 @@ class CarouselOptions {
 
   ///Generate new [CarouselOptions] based on old ones.
 
-  CarouselOptions copyWith({
-    double? height,
-    double? aspectRatio,
-    double? viewportFraction,
-    int? initialPage,
-    bool? enableInfiniteScroll,
-    bool? reverse,
-    bool? autoPlay,
-    Duration? autoPlayInterval,
-    Duration? autoPlayAnimationDuration,
-    Curve? autoPlayCurve,
-    bool? enlargeCenterPage,
-    void Function(int index, CarouselPageChangedReason reason)? onPageChanged,
-    ValueChanged<double?>? onScrolled,
-    ScrollPhysics? scrollPhysics,
-    bool? pageSnapping,
-    Axis? scrollDirection,
-    bool? pauseAutoPlayOnTouch,
-    bool? pauseAutoPlayOnManualNavigate,
-    bool? pauseAutoPlayInFiniteScroll,
-    PageStorageKey<dynamic>? pageViewKey,
-    CenterPageEnlargeStrategy? enlargeStrategy,
-    double? enlargeFactor,
-    bool? disableCenter,
-    Clip? clipBehavior,
-    bool? padEnds,
-  }) =>
+  CarouselOptions copyWith(
+          {double? height,
+          double? aspectRatio,
+          double? viewportFraction,
+          int? initialPage,
+          bool? enableInfiniteScroll,
+          bool? reverse,
+          bool? autoPlay,
+          Duration? autoPlayInterval,
+          Duration? autoPlayAnimationDuration,
+          Curve? autoPlayCurve,
+          bool? enlargeCenterPage,
+          Function(int index, CarouselPageChangedReason reason)? onPageChanged,
+          ValueChanged<double?>? onScrolled,
+          ScrollPhysics? scrollPhysics,
+          bool? pageSnapping,
+          Axis? scrollDirection,
+          bool? pauseAutoPlayOnTouch,
+          bool? pauseAutoPlayOnManualNavigate,
+          bool? pauseAutoPlayInFiniteScroll,
+          PageStorageKey? pageViewKey,
+          CenterPageEnlargeStrategy? enlargeStrategy,
+          double? enlargeFactor,
+          bool? disableCenter,
+          Clip? clipBehavior,
+          bool? padEnds}) =>
       CarouselOptions(
         height: height ?? this.height,
         aspectRatio: aspectRatio ?? this.aspectRatio,
@@ -201,8 +199,7 @@ class CarouselOptions {
         reverse: reverse ?? this.reverse,
         autoPlay: autoPlay ?? this.autoPlay,
         autoPlayInterval: autoPlayInterval ?? this.autoPlayInterval,
-        autoPlayAnimationDuration:
-            autoPlayAnimationDuration ?? this.autoPlayAnimationDuration,
+        autoPlayAnimationDuration: autoPlayAnimationDuration ?? this.autoPlayAnimationDuration,
         autoPlayCurve: autoPlayCurve ?? this.autoPlayCurve,
         enlargeCenterPage: enlargeCenterPage ?? this.enlargeCenterPage,
         onPageChanged: onPageChanged ?? this.onPageChanged,
@@ -211,10 +208,8 @@ class CarouselOptions {
         pageSnapping: pageSnapping ?? this.pageSnapping,
         scrollDirection: scrollDirection ?? this.scrollDirection,
         pauseAutoPlayOnTouch: pauseAutoPlayOnTouch ?? this.pauseAutoPlayOnTouch,
-        pauseAutoPlayOnManualNavigate:
-            pauseAutoPlayOnManualNavigate ?? this.pauseAutoPlayOnManualNavigate,
-        pauseAutoPlayInFiniteScroll:
-            pauseAutoPlayInFiniteScroll ?? this.pauseAutoPlayInFiniteScroll,
+        pauseAutoPlayOnManualNavigate: pauseAutoPlayOnManualNavigate ?? this.pauseAutoPlayOnManualNavigate,
+        pauseAutoPlayInFiniteScroll: pauseAutoPlayInFiniteScroll ?? this.pauseAutoPlayInFiniteScroll,
         pageViewKey: pageViewKey ?? this.pageViewKey,
         enlargeStrategy: enlargeStrategy ?? this.enlargeStrategy,
         enlargeFactor: enlargeFactor ?? this.enlargeFactor,

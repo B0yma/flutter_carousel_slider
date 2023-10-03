@@ -34,12 +34,7 @@ class CarouselState {
   Function onResumeTimer;
 
   /// The callback to set the Reason Carousel changed
-  ValueChanged<CarouselPageChangedReason> changeMode;
+  Function(CarouselPageChangedReason) changeMode;
 
-  CarouselState(
-    this.options,
-    this.onResetTimer,
-    this.onResumeTimer,
-    this.changeMode,
-  );
+  CarouselState(this.options, this.onResetTimer, this.onResumeTimer, this.changeMode);
 }

@@ -112,14 +112,14 @@ class BasicDemo extends StatelessWidget {
       appBar: AppBar(title: Text('Basic demo')),
       body: Container(
           child: CarouselSlider(
-        options: CarouselOptions(),
-        items: list
-            .map((item) => Container(
-                  child: Center(child: Text(item.toString())),
-                  color: Colors.green,
-                ))
-            .toList(),
-      )),
+            options: CarouselOptions(),
+            items: list
+                .map((item) => Container(
+              child: Center(child: Text(item.toString())),
+              color: Colors.green,
+            ))
+                .toList(),
+          )),
     );
   }
 }
@@ -132,16 +132,16 @@ class NoCenterDemo extends StatelessWidget {
       appBar: AppBar(title: Text('Basic demo')),
       body: Container(
           child: CarouselSlider(
-        options: CarouselOptions(
-          disableCenter: true,
-        ),
-        items: list
-            .map((item) => Container(
-                  child: Text(item.toString()),
-                  color: Colors.green,
-                ))
-            .toList(),
-      )),
+            options: CarouselOptions(
+              disableCenter: true,
+            ),
+            items: list
+                .map((item) => Container(
+              child: Text(item.toString()),
+              color: Colors.green,
+            ))
+                .toList(),
+          )),
     );
   }
 }
@@ -153,59 +153,59 @@ class ImageSliderDemo extends StatelessWidget {
       appBar: AppBar(title: Text('Image slider demo')),
       body: Container(
           child: CarouselSlider(
-        options: CarouselOptions(),
-        items: imgList
-            .map((item) => Container(
-                  child: Center(
-                      child:
-                          Image.network(item, fit: BoxFit.cover, width: 1000)),
-                ))
-            .toList(),
-      )),
+            options: CarouselOptions(),
+            items: imgList
+                .map((item) => Container(
+              child: Center(
+                  child:
+                  Image.network(item, fit: BoxFit.cover, width: 1000)),
+            ))
+                .toList(),
+          )),
     );
   }
 }
 
 final List<Widget> imageSliders = imgList
     .map((item) => Container(
-          child: Container(
-            margin: EdgeInsets.all(5.0),
-            child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                child: Stack(
-                  children: <Widget>[
-                    Image.network(item, fit: BoxFit.cover, width: 1000.0),
-                    Positioned(
-                      bottom: 0.0,
-                      left: 0.0,
-                      right: 0.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromARGB(200, 0, 0, 0),
-                              Color.fromARGB(0, 0, 0, 0)
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                          ),
-                        ),
-                        padding: EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 20.0),
-                        child: Text(
-                          'No. ${imgList.indexOf(item)} image',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
-          ),
-        ))
+  child: Container(
+    margin: EdgeInsets.all(5.0),
+    child: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(5.0)),
+        child: Stack(
+          children: <Widget>[
+            Image.network(item, fit: BoxFit.cover, width: 1000.0),
+            Positioned(
+              bottom: 0.0,
+              left: 0.0,
+              right: 0.0,
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color.fromARGB(200, 0, 0, 0),
+                      Color.fromARGB(0, 0, 0, 0)
+                    ],
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                  ),
+                ),
+                padding: EdgeInsets.symmetric(
+                    vertical: 10.0, horizontal: 20.0),
+                child: Text(
+                  'No. ${imgList.indexOf(item)} image',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        )),
+  ),
+))
     .toList();
 
 class ComplicatedImageDemo extends StatelessWidget {
@@ -290,7 +290,7 @@ class _ManuallyControlledSliderState extends State<ManuallyControlledSlider> {
                     ),
                   ),
                   ...Iterable<int>.generate(imgList.length).map(
-                    (int pageIndex) => Flexible(
+                        (int pageIndex) => Flexible(
                       child: ElevatedButton(
                         onPressed: () => _controller.animateToPage(pageIndex),
                         child: Text("$pageIndex"),
@@ -312,15 +312,15 @@ class NoonLoopingDemo extends StatelessWidget {
       appBar: AppBar(title: Text('Noon-looping carousel demo')),
       body: Container(
           child: CarouselSlider(
-        options: CarouselOptions(
-          aspectRatio: 2.0,
-          enlargeCenterPage: true,
-          enableInfiniteScroll: false,
-          initialPage: 2,
-          autoPlay: true,
-        ),
-        items: imageSliders,
-      )),
+            options: CarouselOptions(
+              aspectRatio: 2.0,
+              enlargeCenterPage: true,
+              enableInfiniteScroll: false,
+              initialPage: 2,
+              autoPlay: true,
+            ),
+            items: imageSliders,
+          )),
     );
   }
 }
@@ -332,14 +332,14 @@ class VerticalSliderDemo extends StatelessWidget {
       appBar: AppBar(title: Text('Vertical sliding carousel demo')),
       body: Container(
           child: CarouselSlider(
-        options: CarouselOptions(
-          aspectRatio: 2.0,
-          enlargeCenterPage: true,
-          scrollDirection: Axis.vertical,
-          autoPlay: true,
-        ),
-        items: imageSliders,
-      )),
+            options: CarouselOptions(
+              aspectRatio: 2.0,
+              enlargeCenterPage: true,
+              scrollDirection: Axis.vertical,
+              autoPlay: true,
+            ),
+            items: imageSliders,
+          )),
     );
   }
 }
@@ -361,13 +361,13 @@ class FullscreenSliderDemo extends StatelessWidget {
             ),
             items: imgList
                 .map((item) => Container(
-                      child: Center(
-                          child: Image.network(
-                        item,
-                        fit: BoxFit.cover,
-                        height: height,
-                      )),
-                    ))
+              child: Center(
+                  child: Image.network(
+                    item,
+                    fit: BoxFit.cover,
+                    height: height,
+                  )),
+            ))
                 .toList(),
           );
         },
@@ -383,18 +383,18 @@ class OnDemandCarouselDemo extends StatelessWidget {
       appBar: AppBar(title: Text('On-demand carousel demo')),
       body: Container(
           child: CarouselSlider.builder(
-        itemCount: 100,
-        options: CarouselOptions(
-          aspectRatio: 2.0,
-          enlargeCenterPage: true,
-          autoPlay: true,
-        ),
-        itemBuilder: (ctx, index, realIdx) {
-          return Container(
-            child: Text(index.toString()),
-          );
-        },
-      )),
+            itemCount: 100,
+            options: CarouselOptions(
+              aspectRatio: 2.0,
+              enlargeCenterPage: true,
+              autoPlay: true,
+            ),
+            itemBuilder: (ctx, index, realIdx) {
+              return Container(
+                child: Text(index.toString()),
+              );
+            },
+          )),
     );
   }
 }
@@ -442,8 +442,8 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: (Theme.of(context).brightness == Brightness.dark
-                            ? Colors.white
-                            : Colors.black)
+                        ? Colors.white
+                        : Colors.black)
                         .withOpacity(_current == entry.key ? 0.9 : 0.4)),
               ),
             );
@@ -488,20 +488,20 @@ class _PrefetchImageDemoState extends State<PrefetchImageDemo> {
       appBar: AppBar(title: Text('Prefetch image slider demo')),
       body: Container(
           child: CarouselSlider.builder(
-        itemCount: images.length,
-        options: CarouselOptions(
-          autoPlay: true,
-          aspectRatio: 2.0,
-          enlargeCenterPage: true,
-        ),
-        itemBuilder: (context, index, realIdx) {
-          return Container(
-            child: Center(
-                child: Image.network(images[index],
-                    fit: BoxFit.cover, width: 1000)),
-          );
-        },
-      )),
+            itemCount: images.length,
+            options: CarouselOptions(
+              autoPlay: true,
+              aspectRatio: 2.0,
+              enlargeCenterPage: true,
+            ),
+            itemBuilder: (context, index, realIdx) {
+              return Container(
+                child: Center(
+                    child: Image.network(images[index],
+                        fit: BoxFit.cover, width: 1000)),
+              );
+            },
+          )),
     );
   }
 }
@@ -557,7 +557,7 @@ class _CarouselChangeReasonDemoState extends State<CarouselChangeReasonDemo> {
                   ),
                 ),
                 ...Iterable<int>.generate(imgList.length).map(
-                  (int pageIndex) => Flexible(
+                      (int pageIndex) => Flexible(
                     child: ElevatedButton(
                       onPressed: () => _controller.animateToPage(pageIndex),
                       child: Text("$pageIndex"),
@@ -588,13 +588,13 @@ class KeepPageViewPositionDemo extends StatelessWidget {
         if (index == 3) {
           return Container(
               child: CarouselSlider(
-            options: CarouselOptions(
-              aspectRatio: 2.0,
-              enlargeCenterPage: true,
-              pageViewKey: PageStorageKey<String>('carousel_slider'),
-            ),
-            items: imageSliders,
-          ));
+                options: CarouselOptions(
+                  aspectRatio: 2.0,
+                  enlargeCenterPage: true,
+                  pageViewKey: PageStorageKey<String>('carousel_slider'),
+                ),
+                items: imageSliders,
+              ));
         } else {
           return Container(
             margin: EdgeInsets.symmetric(vertical: 20),
@@ -617,28 +617,28 @@ class MultipleItemDemo extends StatelessWidget {
       appBar: AppBar(title: Text('Multiple item in one slide demo')),
       body: Container(
           child: CarouselSlider.builder(
-        options: CarouselOptions(
-          aspectRatio: 2.0,
-          enlargeCenterPage: false,
-          viewportFraction: 1,
-        ),
-        itemCount: (imgList.length / 2).round(),
-        itemBuilder: (context, index, realIdx) {
-          final int first = index * 2;
-          final int second = first + 1;
-          return Row(
-            children: [first, second].map((idx) {
-              return Expanded(
-                flex: 1,
-                child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  child: Image.network(imgList[idx], fit: BoxFit.cover),
-                ),
+            options: CarouselOptions(
+              aspectRatio: 2.0,
+              enlargeCenterPage: false,
+              viewportFraction: 1,
+            ),
+            itemCount: (imgList.length / 2).round(),
+            itemBuilder: (context, index, realIdx) {
+              final int first = index * 2;
+              final int second = first + 1;
+              return Row(
+                children: [first, second].map((idx) {
+                  return Expanded(
+                    flex: 1,
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      child: Image.network(imgList[idx], fit: BoxFit.cover),
+                    ),
+                  );
+                }).toList(),
               );
-            }).toList(),
-          );
-        },
-      )),
+            },
+          )),
     );
   }
 }
