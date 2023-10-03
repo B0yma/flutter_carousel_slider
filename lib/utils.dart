@@ -21,3 +21,15 @@ int remainder(int input, int? source) {
   final int result = input % source!;
   return result < 0 ? source + result : result;
 }
+
+double floatRealIndex(double position, double base, int length) {
+  final double offset = position - base;
+
+  return floatRemainder(offset, length);
+}
+
+double floatRemainder(double input, int source) {
+  if (source == 0) return 0;
+
+  return input;
+}
